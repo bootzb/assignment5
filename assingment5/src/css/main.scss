@@ -1,0 +1,117 @@
+$color_1: white;
+$color_2: #fff;
+$font-family_1: "avenir", Comic Sans MS, serif;
+$font-family_2: "moon", serif;
+$background-color_1: black;
+$background-color_2: #555;
+
+@import "../css/foundation.css";
+@font-face {
+  font-family: "avenir";
+  src: url("../assets/AvenirLTStd-Black.woff2");
+}
+@font-face {
+  font-family: "moon";
+  src: url("../assets/Moon2.0-Regular.woff2");
+}
+.font {
+  font-family: $font-family_1;
+}
+.font2 {
+  text-align: center;
+  font-family: $font-family_2;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: black;
+}
+.container {
+  background: #222;
+  width: 900px;
+  margin: 0 auto;
+  color: $color_1;
+  padding: 15px;
+}
+.author {
+  display: flex;
+  justify-content: space-between;
+}
+.space {
+  max-width: 100%;
+  padding-bottom: 15px;
+}
+.moon {
+  width: 300px;
+  height: 300px;
+  float: right;
+  border-radius: 70%;
+}
+.dark {
+  display: flex;
+  height: 320px;
+  width: 320px;
+  background-color: $background-color_1;
+  border-radius: 70%;
+  float: right;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  background: #222;
+  .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: $background-color_2;
+    color: $color_2;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+    }
+  }
+  &:hover {
+    .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+a {
+  color: $color_1;
+  border-bottom: 1px dashed white;
+}
+.button {
+  display: flex;
+  color: $color_1;
+  justify-content: center;
+}
+@media print {
+  .space {
+    display: none;
+  }
+  .moon {
+    display: none;
+  }
+  .dark {
+    display: none;
+  }
+}
